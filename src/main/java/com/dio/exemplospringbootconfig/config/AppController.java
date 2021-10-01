@@ -15,11 +15,22 @@ public class AppController {
     @Value("${app.message}")
     private String appMessage;
 
+    // Mapeando uma variável de ambiente através do spring. Caso não venha nenhum
+    // valor, por padrão será assumido o valor "NENHUMA"
+    @Value("${ENV_DB_URL:NENHUMA}")
+    private String dbEnvironmentVariable;
+
     // Toda ves que o projeto for aberto no contexto da rota "/", Vamos exibir a
     // mensagem mapeada para desenvolvimento ou para produção
     @GetMapping("/")
     public String getAppMessage() {
         return appMessage;
+    }
+
+    // Usado para exibir a variável de ambiente no browser
+    @GetMapping("/envVariable")
+    public String getEnvironment() {
+        return "A seguinte variável de ambiente foi passada: " + dbEnvironmentVariable;
     }
 
 }
