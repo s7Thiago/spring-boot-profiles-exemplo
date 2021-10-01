@@ -30,6 +30,11 @@ public class AppController {
     // Usado para exibir a variável de ambiente no browser
     @GetMapping("/envVariable")
     public String getEnvironment() {
+
+        // Como exemplo, para exportar o valor "jdbc:h2:mem:db;DB_CLOSE_DELAY=-1" para a
+        // variável de ambiente mapeada ENV_DB_URL, com o comando "export
+        // ENV_DB_URL=jdbc:h2:mem:db;DB_CLOSE_DELAY=-1" no terminal, para ser mapeada e
+        // exibida no browser pelo endpoint /envVariable
         return "A seguinte variável de ambiente foi passada: " + dbEnvironmentVariable;
     }
 
