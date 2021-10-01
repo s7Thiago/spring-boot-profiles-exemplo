@@ -17,7 +17,7 @@ import lombok.Setter;
 @Configuration
 // Mapeia para a classe todo o grupo de propriedades nos arquivos properties que
 // tem o prefixo spring.datasource
-@ConfigurationProperties("spring.datadource")
+@ConfigurationProperties("spring.datasource")
 @Getter
 @Setter
 public class DBConfiguration {
